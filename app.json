@@ -1,0 +1,66 @@
+{
+  "pages": [
+    "pages/another/leader/leader",
+    "pages/another/home/home",
+    "pages/another/leader/stories/stories",
+    "pages/another/leader/authors/authors",
+    "pages/another/stack/stack",
+    "pages/another/stack/booklist/booklist",
+    "pages/another/stack/booklist/bookdetail/bookdetail",
+    "pages/another/bookdesk/bookdesk",
+    "pages/another/mine/mine",
+    "pages/another/mine/news/news",
+    "pages/test/test",
+    "pages/food/food",
+    "pages/customFood/customFood",
+    "pages/location/location",
+    "pages/random/random",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "read",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#444",
+    "backgroundColor": "#fff",
+    "borderStyle": "e0e0e0",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/another/leader/leader",
+        "iconPath": "images/mine.jpg",
+        "selectedIconPath": "images/getCurrentLocation.png",
+        "text": "领读"
+      },
+      {
+        "pagePath": "pages/another/stack/stack",
+        "iconPath": "images/mine.jpg",
+        "selectedIconPath": "images/getCurrentLocation.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/another/bookdesk/bookdesk",
+        "iconPath": "images/mine.jpg",
+        "selectedIconPath": "images/getCurrentLocation.png",
+        "text": "书桌"
+      },
+      {
+        "pagePath": "pages/another/mine/mine",
+        "iconPath": "images/mine.jpg",
+        "selectedIconPath": "images/getCurrentLocation.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false
+}

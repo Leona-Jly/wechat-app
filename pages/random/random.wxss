@@ -1,0 +1,34 @@
+/* pages/random/random.wxss */
+.random-container{
+  text-align: center;
+  position: relative;
+  min-height: 100vh;
+}
+
+.random-hint{
+  margin-bottom: 50rpx;
+}
+
+.random-input{
+  display: inline-block;
+  width: 230rpx;
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+  vertical-align: middle;
+}
+
+.random-number-wrapper{
+  margin-top: 50rpx;
+}
+
+.random-number{
+  font-size: 60rpx;
+}
+
+.random-number-history{
+  position: absolute;
+  bottom: 100rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 28rpx;
+}

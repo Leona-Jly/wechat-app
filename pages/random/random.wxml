@@ -1,0 +1,21 @@
+<!--pages/random/random.wxml-->
+<view class="container random-container">
+  <view class="random-hint">
+    <text>请输入随机数的区间，默认0-100</text>
+  </view>
+  <form bindsubmit="getRandomNum">
+    <view>
+      <input class="random-input" name="randomInputLeft" type="number"></input>
+      <text space="nbsp"> 至 </text>
+      <input class="random-input" name="randomInputRight" type="number"></input>
+    </view>
+    <view class="random-number-wrapper">
+      随机数为：
+      <text class="random-number">{{randomNumber}}</text>
+    </view>
+    <button form-type="submit" class="common-button" size="default" type="primary">来吧</button>
+  </form>
+  <view wx:if="{{randomNumberHistory.length > 0}}" class="random-number-history">
+    <text>历史记录：{{randomNumberHistory}}</text>
+  </view>
+</view>

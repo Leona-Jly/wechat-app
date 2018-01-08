@@ -1,0 +1,14 @@
+<!--pages/customFood/customFood.wxml-->
+<view>
+  <form bindsubmit="saveCustomFood">
+    <view class="textarea-wrapper">
+      <text>大餐：</text>
+      <textarea class="custom-textarea" name="formalTextarea" value="{{formal}}"></textarea>
+    </view>
+    <view class="textarea-wrapper">
+      <text>小餐：</text>
+      <textarea class="custom-textarea" name="casualTextarea" value="{{casual}}"></textarea>
+    </view>
+    <button form-type="submit" type="primary" class="common-button save-button">保存</button>
+  </form>
+</view>

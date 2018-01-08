@@ -1,0 +1,21 @@
+<!--pages/food/food.wxml-->
+<view class="container food-container">
+  <view class="food-checkbox-wrapper">
+    <text space="nbsp">我想吃   </text>
+    <checkbox-group class="checkbox-group" bindchange="checkboxChange">
+      <label class="food-checkbox">
+        <checkbox value="formal" checked="{{true}}" disabled="{{formalDisable}}"/>大餐
+      </label>
+      <label class="food-checkbox">
+        <checkbox value="casual" checked="{{true}}" disabled="{{casualDisable}}"/>小餐
+      </label>
+    </checkbox-group>
+  </view>
+  <view class="random-food-wrapper text-center">
+    <text>{{randomFood}}</text>
+  </view>
+  <button bindtap="getRandomFood" type="primary" class="common-button food-button">帮我挑</button>
+  <view class="custom-food-link">
+    <navigator url="/pages/customFood/customFood">自定义美食</navigator>
+  </view>
+</view>

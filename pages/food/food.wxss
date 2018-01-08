@@ -1,0 +1,26 @@
+/* pages/food/food.wxss */
+.food-container{
+  padding: 50rpx;
+}
+
+.checkbox-group{
+  display: inline-block;
+}
+
+.food-checkbox{
+  margin-right: 30rpx;
+}
+
+.random-food-wrapper{
+  margin-top: 185rpx;
+  height: 50rpx;
+  font-size: 50rpx;
+}
+
+.custom-food-link{
+  position: absolute;
+  bottom: 100rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 28rpx;
+}

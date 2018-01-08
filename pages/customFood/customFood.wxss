@@ -1,0 +1,15 @@
+/* pages/customFood/customFood.wxss */
+.textarea-wrapper{
+  padding: 40rpx 40rpx 0 40rpx;
+}
+
+.custom-textarea{
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+  margin: 20rpx auto;
+}
+
+.save-button{
+  margin-top: 80rpx;
+}

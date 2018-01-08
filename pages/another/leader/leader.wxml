@@ -1,0 +1,17 @@
+<!--pages/leader/leader.wxml-->
+<view>
+  <input value="{{keyword}}" class="keyword-input" placeholder="enter keyword" bindinput="inputKeyword"></input>
+</view>
+<view>
+  <ul class="hint-list">
+    <li class="hint-item" wx:for="{{hintList}}" wx:key="{{index}}" bindtap="tapHintItem">{{item}}</li>
+  </ul>
+</view>
+
+<view>
+  <button bindtap="startScan">scan</button>
+  <view>
+    <text>scanResult example:\n {"result":"https://mp.weixin.qq.com/a/~~wy5eLd-vdBc~HrDQDykMgSC0pxtkEx-C2A~~","path":"pages/another/leader/leader?","errMsg":"scanCode:ok","scanType":"QR_CODE","charSet":"UTF-8"}</text>
+  </view>
+  <text>{{scanResult}}</text>
+</view>

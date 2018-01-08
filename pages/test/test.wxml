@@ -1,0 +1,4 @@
+<!--pages/test/test.wxml-->
+<view>
+  <button><navigator url="pages/leader/leader">another</navigator></button>
+</view>

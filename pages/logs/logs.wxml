@@ -1,0 +1,11 @@
+<!--logs.wxml-->
+<view class="container">
+  <view>
+    <!-- <navigator open-type="navigateTo" url="/pages/index/index">跳转到新页面</navigator> -->
+  </view>
+  <view class="log-list">
+    <block wx:for="{{logs}}" wx:for-item="log" wx:key="index">
+      <text class="log-item">{{index + 1}}. {{log}}</text>
+    </block>
+  </view>
+</view>
