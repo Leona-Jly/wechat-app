@@ -1,5 +1,5 @@
 // pages/random/random.js
-const getRandomNumber = require('../../utils/util.js').getRandomNumber;
+const getRandomNumber = require('../../utils-wechat/util.js').getRandomNumber;
 
 Page({
 

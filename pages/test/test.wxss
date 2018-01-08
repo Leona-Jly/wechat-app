@@ -1,1 +1,29 @@
 /* pages/test/test.wxss */
+page{
+  height: 120%;
+}
+
+.keyword-input{
+  padding: 10rpx 20rpx;
+}
+
+.hint-item{
+  display: block;
+  padding: 10rpx 20rpx;
+}
+
+.scan-result{
+  background-color: #9a9a9a;
+}
+
+.list-container{
+  margin-top: 100rpx;
+}
+
+.item{
+  background-color: #f6f8f9;
+  color: #9a9a9a;
+  font-size: 14px;
+  padding:  10px 20px;
+  margin-bottom: 15px;
+}

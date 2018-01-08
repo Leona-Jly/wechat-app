@@ -1,4 +1,35 @@
 <!--pages/test/test.wxml-->
+<view class="text-center">
+  wait {{timer}} seconds
+</view>
 <view>
-  <button><navigator url="pages/leader/leader">another</navigator></button>
+  <view>
+    <input value="{{keyword}}" class="keyword-input" placeholder="enter keyword" bindinput="inputKeyword"></input>
+  </view>
+  <view>
+    <ul class="hint-list">
+      <li class="hint-item" wx:for="{{hintList}}" wx:key="{{index}}" bindtap="tapHintItem">{{item}}</li>
+    </ul>
+  </view>
+
+  <view>
+    <button bindtap="startScan">scan</button>
+    <view>
+      <text>scanResult example:\n {"result":"https://mp.weixin.qq.com/a/~~wy5eLd-vdBc~HrDQDykMgSC0pxtkEx-C2A~~","path":"pages/another/leader/leader?","errMsg":"scanCode:ok","scanType":"QR_CODE","charSet":"UTF-8"}</text>
+    </view>
+    <text class="scan-result">{{scanResult}}</text>
+  </view>
+</view>
+
+<view class="list-container">
+  <block wx:for="{{arrList}}" wx:key="index">
+    <view class="item">
+      <text>{{item}}</text>
+    </view>
+  </block>
+  <block wx:if="{{arrList.length === 0}}">
+    <view class="item">
+      <text>xiala</text>
+    </view>
+  </block>
 </view>
