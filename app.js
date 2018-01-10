@@ -1,6 +1,16 @@
 //app.js
+'use strict';
+
+// 引入工具类库
+import util from './utils/index';
+
 App({
   onLaunch: function (options) { // 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
+    util.getStorageData('visited', data => {
+      this.globalData.visitedArticles = data;
+    });
+    // this.getDevideInfo();
+
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -36,9 +46,19 @@ App({
   onError(err) { // 当小程序发生脚本错误，或者 api 调用失败时，会触发 onError 并带上错误信息
     console.log("app.js onError", err);
   },
+  getDevideInfo() {
+    let self = this;
+    wx.getSystemInfo({
+      success(res) {
+        self.globalData.deviceInfo = res;
+        console.log('deviceInfo: ', self.globalData.deviceInfo);
+      }
+    })
+  },
   globalData: {
     userInfo: null,
     visitedArticles: '',
+    deviceInfo: {},
     foodList: {
       formal: ["西餐", "自助餐", "火锅", "烧烤", "麻辣香锅", "日本料理", "羊蝎子", "肯德基", "茶餐厅", "海底捞", "比萨", "烤鱼", "海鲜", "铁板烧", "韩国料理", "东南亚菜", "甜点", "农家菜", "云南菜", "川菜", "湘菜", "粤菜", "新疆菜", "西北菜", "东北菜", "法国菜", "泰国菜", "印度菜", "意大利菜", "西班牙菜", "英国菜", "越南菜", "墨西哥菜", "烤鸭", "大排档", "肉蟹煲", "串串", "小龙虾", "素斋", "大盘鸡"],
       casual: ["寿司", "盖浇饭", "砂锅", "大排档", "炒粉干", "年糕", "麻辣烫", "衢州烧饼", "中式快餐", "汉堡", "水果", "汤圆", "馄饨", "水饺", "花甲粉", "烧烤", "泡面", "速冻水饺", "馒头", "包子", "味千拉面", "肯德基", "面包", "蛋糕", "饼干", "蛋炒饭", "扬州炒饭", "咖啡", "比萨", "麦当劳", "兰州拉面", "沙县小吃", "铁板炒饭", "铁板炒饭", "酱香饼", "烤红薯", "韩国料理", "粥", "生煎", "小笼包", "甜点", "小炒", "肉夹馍", "蛋包饭", "鸡蛋汉堡", "章鱼小丸子", "减肥餐", "燕麦", "酸奶", "三明治", "鸡肉卷", "咖喱饭", "热狗", "拌面"]

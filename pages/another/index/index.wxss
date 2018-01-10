@@ -79,7 +79,7 @@
 }
 
 .wrapper .group-content-item.visited .group-content-item-desc {
-  color: #999
+  color: #999;
 }
 
 .wrapper .no-more {
