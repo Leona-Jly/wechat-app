@@ -1,4 +1,14 @@
 // pages/another/detail/detail.js
+'use strict';
+
+import util from '../../../utils/index';
+import config from '../../../utils/config';
+
+// WxParse HtmlFormater 用来解析 content 文本为小程序视图
+import WxParse from '../../lib/wxParse/wxParse';
+// 把 html 转为化标准安全的格式
+import HtmlFormater from '../../lib/htmlFormater';
+
 Page({
 
   /**
