@@ -9,7 +9,7 @@ App({
     util.getStorageData('visited', data => {
       this.globalData.visitedArticles = data;
     });
-    // this.getDevideInfo();
+    this.getDevideInfo();
 
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
