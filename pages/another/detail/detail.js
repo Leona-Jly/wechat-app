@@ -38,11 +38,15 @@ Page({
     // 所以当文章数据解析后，当前环境上下文中已经存在了数据 article，可以直接在 detail.wxml 中引用： this.data.article
   },
 
+  goTop() {
+    this.setData({
+      scrollTop: 0
+    })
+  },
+
   init(contentId){
     if(contentId){
-      // wx.pageScrollTo({
-      //   scrollTop: 0,
-      // })
+      this.goTop();
       this.requestDetail(contentId)
         .then(data => {
           this.configPageData(data);
@@ -59,7 +63,6 @@ Page({
       // 同步数据到model层，model层数据发生变化的话，视图层会自动渲染
       this.setData({
         detailData: data,
-        scrollTop: 0,
       });
       // 设置标题
       let title = this.data.detailData.title || config.defaultBarTitle;
