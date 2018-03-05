@@ -15,6 +15,9 @@
         wx:for-item="article"
         wx:key="{{article.contentId}}"
         data-contentId="{{article.contentId}}"
+        data-title="{{article.title}}"
+        data-date="{{group.formatDate}}"
+        data-image="{{article.cover}}"
         bindtap="showDetail"
         class="group-content-item {{article.hasVisited? 'visited' : ''}}"
       >

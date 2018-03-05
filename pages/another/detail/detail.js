@@ -9,25 +9,31 @@ import WxParse from '../../../lib/wxParse/wxParse';
 // 把 html 转为化标准安全的格式
 import HtmlFormater from '../../../lib/htmlFormater';
 
+let app = getApp();
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    viewHeight: app.globalData.deviceInfo.windowHeight + 'px', // scroll-view的高度
     scrollTop: 0,
     detailData: {},
+    title: '', // 标题
+    date: '', // 日期
+    datailImage: '', // 详情图片
     isFromShare: false
   },
 
   back() {
-    if (this.data.isFromShare) {
-      wx.navigateTo({
+    // if (this.data.isFromShare) {
+      wx.navigateBack({
         url: '../index/index'
       })
-    } else {
-      wx.navigateBack()
-    }
+    // } else {
+    //   wx.navigateBack()
+    // }
   },
 
   articleRevert() {
@@ -62,7 +68,7 @@ Page({
     if(data){
       // 同步数据到model层，model层数据发生变化的话，视图层会自动渲染
       this.setData({
-        detailData: data,
+        detailData: data
       });
       // 设置标题
       let title = this.data.detailData.title || config.defaultBarTitle;
@@ -136,6 +142,9 @@ Page({
     */
     let id = options.contentId || 0;
     this.setData({
+      title: options.title,
+      date: options.date,
+      datailImage: options.image,
       isFromShare: !!options.share
     });
     this.init(id);
@@ -187,15 +196,16 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    let title = this.data.detailData && this.data.detailData.title || config.defaultShareText;
+    let title = this.data.title || config.defaultShareText;
+    let image = this.data.detailImage || config.defaultShareImg;
     return {
       // 分享出去的内容标题
       title: title,
 
       // 用户点击分享出去的内容，跳转的地址
       // contentId为文章id参数；share参数作用是说明用户是从分享出去的地址进来的，后面会用到
-      path: `/pages/another/detail/detail?share=1&contentId=${contentId}`,
-
+      path: `/pages/another/detail/detail?share=1&contentId=${contentId}&title=${title}&date=${date}&image=${datailImage}`,
+      imageUrl: image,
       // 分享成功
       success: function(res){},
 

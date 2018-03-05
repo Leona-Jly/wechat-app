@@ -102,7 +102,6 @@ Page({
         // 正常数据 do something
         let articleData = res.data;
         let formatData = this.formatArticleData(articleData);
-        console.log('request formatData: ', formatData);
         this.renderArticle(formatData);
       }
       /*
@@ -145,14 +144,14 @@ Page({
   * 然后带着参数 id 跳转到详情页面
   */
   showDetail(e){
-    console.log('showDetail e: ', e);
+    // console.log('showDetail e: ', e);
     let dataset = e.currentTarget.dataset;
     let contentId = dataset.contentid; // 注意大小写
     // let article = dataset && dataset.article;
     // let contentId = article.contentId || 0;
     this.markRead(contentId);
     wx.navigateTo({
-      url: `../detail/detail?contentId=${contentId}`,
+      url: `../detail/detail?contentId=${contentId}&title=${dataset.title}&date=${dataset.date}&image=${dataset.image}`,
     })
   },
 

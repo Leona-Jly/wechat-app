@@ -1,23 +1,25 @@
 <!--pages/another/detail/detail.wxml-->
 <import src="../../../lib/wxParse/wxParse.wxml"/>
 <scroll-view
-  scroll-y="true"
+  scroll-y
   enable-back-to-top="true"
-  scroll-top="{{ scrollTop }}" 
+  scroll-top="{{scrollTop}}" 
   class="root-wrap"
+  style="height: {{viewHeight}}"
 >
   <view class="wrapper">
     <!-- 页面头部 -->
     <view class="info">
-      <view class="info-title">{{ detailData.title }}</view>
+      <view class="info-title">{{ title }}</view>
       <view class="info-desc cf">
         <text class="info-desc-author fl">{{ detailData.author }}</text>
-        <text class="info-desc-date fr">{{ detailData.formateUpdateTime}}</text>
+        <text class="info-desc-date fr">{{ date }}</text>
       </view>
       <view class="info-line under-line"></view>
     </view>
     <!-- 正文 -->
     <view class="content">
+      <image src="{{datailImage}}" mode="{{aspectFit}}" style="width: 100%;"></image>
       <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
     </view>
     <!-- 页面尾部 -->
